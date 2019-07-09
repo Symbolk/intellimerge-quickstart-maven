@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Main {
     // Change repoPath to the path where you clone https://github.com/Symbolk/intellimerge-sample-input
-    private static String repoPath = "F:/workspace/dev/intellimerge-sample-input";
+    private static String repoPath = "D:\\github\\intellimerge-sample-input";
 
     public static void main(String[] args) {
         PropertyConfigurator.configure("log4j.properties");
@@ -18,9 +18,10 @@ public class Main {
      * Merge two branches of a git repository
      */
     private static void mergeBranches() {
+        System.out.println("--------merging branches---------");
+
         IntelliMerge merger = new IntelliMerge();
 
-        // 1. merging branches
         String outputPath = repoPath + "/results1";
         boolean hasSubModule = false;
         List<String> branchNames = new ArrayList<>();
@@ -42,7 +43,10 @@ public class Main {
      * Merge three directories that contains Java files
      */
     private static void mergeDirectories() {
+        System.out.println("--------merging directories---------");
+
         IntelliMerge merger = new IntelliMerge();
+
         List<String> directoryPaths = new ArrayList<>();
         String outputPath = repoPath + "/results2";
 
